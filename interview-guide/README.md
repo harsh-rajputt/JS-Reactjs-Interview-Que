@@ -14,6 +14,8 @@ Welcome to the comprehensive interview guide. This repository is **purely focuse
 | [**Advanced React**](./06-react-advanced.md) | **Deep Dive:** Fiber Architecture, Concurrent Mode, SSR vs CSR, Testing, Performance. | 🚀 **Must Read** |
 | **Challenges** | | |
 | [Coding Challenges](./coding-challenges.md) | Practical coding problems with solutions. | 🧩 **Practice Now** |
+| **Legacy** | | |
+| [Legacy Questions (Original Collection)](./99-legacy-questions.md) | The original massive list of 100+ questions. | 📚 **Reference** |
 
 ## 🚀 How to use this guide
 
