@@ -195,31 +195,50 @@ const obj2 = { ...obj1, b: 2 }; // { a: 1, b: 2 }
 
 ### 6. Arrays & Methods
 
-**Q14: `map` vs `forEach`?**
+**Q14: Detailed explanation of `map`, `filter`, and `reduce`?**
 
-**Hindi:** `map` naya array return karta hai. `forEach` sirf loop karta hai, kuch return nahi karta.
-
-**English:** `map` returns a **new array**. `forEach` just allows iterating and returns `undefined`.
+**1. `map()` - Transform**
+**Hindi:** Har element ko transform karke **naya array** return karta hai. Length same rehti hai.
+**English:** Creates a new array by applying a function to every element. Same length as original.
 
 ```javascript
 const nums = [1, 2, 3];
-
-const doubled = nums.map(n => n * 2); // [2, 4, 6]
-
-nums.forEach(n => console.log(n)); // Logs 1, 2, 3
+const doubled = nums.map(num => num * 2); 
+// Output: [2, 4, 6]
 ```
 
-**Q15: Explain `filter`, `find`, and `reduce`.**
+**2. `filter()` - Select**
+**Hindi:** Condition check karta hai using `true/false`. Jo elements condition pass karte hain unka **naya array** banata hai.
+**English:** Creates a new array with all elements that pass the test implemented by the function.
 
-**Hindi:**
-- `filter`: Condition match karne wale **saare** items deta hai.
-- `find`: Condition match karne wala **pehla** item deta hai.
-- `reduce`: Saare items ko jod kar **ek** value banata hai.
+```javascript
+const nums = [1, 2, 3, 4];
+const evens = nums.filter(num => num % 2 === 0);
+// Output: [2, 4]
+```
 
-**English:**
-- `filter`: Returns **all** matching elements.
-- `find`: Returns the **first** matching element.
-- `reduce`: Reduces array to a **single value** (accumulator).
+**3. `reduce()` - Accumulate (Jodna)**
+**Hindi:** Saare elements ko process karke **single value** (number, object, ya array) return karta hai. Isme `accumulator` hota hai jo result store karta hai.
+**English:** Executes a reducer function on each element, resulting in a **single output value**.
+
+**Syntax:** `arr.reduce(callback(accumulator, currentValue), initialValue)`
+
+```javascript
+const nums = [1, 2, 3, 4];
+
+const sum = nums.reduce((acc, curr) => {
+  return acc + curr;
+}, 0); // 0 is initial value
+
+// Iteration 1: acc=0, curr=1 => returns 1
+// Iteration 2: acc=1, curr=2 => returns 3
+// Iteration 3: acc=3, curr=3 => returns 6
+// Iteration 4: acc=6, curr=4 => returns 10
+```
+
+**Q15: `map` vs `forEach`?**
+- **Return:** `map` returns new array, `forEach` returns `undefined`.
+- **Chaining:** `map` can be chained (`.map().filter()`), `forEach` cannot.
 
 **Q16: `slice` vs `splice`?**
 
